@@ -19,5 +19,6 @@ def invalidTransaction(transactions):
                 rec[2] = str(rec[2])
                 result.append(",".join(rec))
                 break
+            
     return result
 print(invalidTransaction(["alice,20,800,mtv","bob,50,1200,mtv"]))
