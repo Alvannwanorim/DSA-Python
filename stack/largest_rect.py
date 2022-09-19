@@ -1,5 +1,9 @@
+"""
+TC: O(N)
+SC: O(N)
+"""
 def largest_rect(heights:list):
-    
+
     stack = []
     maxArea =0
     for i,h in enumerate(heights):
