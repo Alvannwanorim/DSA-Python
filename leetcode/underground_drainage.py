@@ -13,7 +13,7 @@ class UndergroundSystem:
     def checkOut(self, id: int, stationName: str, t: int) -> None:
         startTime, startStation = self.inTime[id]
         totalDifference = t- startTime
-        self.outTime[(startTime, startStation)].append(totalDifference)
+        self.outTime[(startStation, stationName)].append(totalDifference)
 
     def getAverageTime(self, startStation: str, endStation: str) -> float:
         return sum(self.o[(startStation,endStation)])/len(self.o[(startStation,endStation)])
