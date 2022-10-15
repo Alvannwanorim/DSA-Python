@@ -14,6 +14,7 @@ class Leaderboard:
     def top(self, K: int) -> int:
         # filter the all the score for each player
         values = [v for _,v in sorted(self.board.items(), keys=lambda item: item[1])]
+        # sort the values in reverse order
         values.sort(reverse= True)
         total, i = 0, 0
         while i < K:
