@@ -9,7 +9,6 @@ class Solution:
         wordSet = set(wordDict)
         dp = [[]] * (len(s)+ 1)
         dp[0] =[""]
-
         for endIndex in range(1,len(s) + 1):
             sublist = []
             for startIndex in range(0, endIndex):
@@ -17,12 +16,12 @@ class Solution:
                 if word in wordSet:
                     for subsentence in dp[startIndex]:
                         sublist.append((subsentence + ' ' + word).strip())
-                        print(sublist)
+                        print(startIndex, endIndex,sublist)
             dp[endIndex] = sublist
 
         return dp[len(s)]
 sol = Solution()
-print(sol.wordBreak('abcdef', [ 'ab', 'abc', 'cd', 'def', 'abcd', 'ef', 'c' ]))
+print(sol.wordBreak('catsanddog', ["cat","cats","and","sand","dog"]))
 
 class Soultion2:
     def wordBreak(self, s: str, wordDict: List[str]) ->List[str]:
