@@ -13,18 +13,25 @@ class Solution:
     def verticalOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if root is None:
             return []
-        table = defaultdict(List)
-        min_col  = max_col = 0
-        queue = deque([root,0])
+        table = defaultdict(list)
+        left_col  = right_col = 0
+        queue = deque([(root,0)])
 
         while queue:
             node, col = queue.popleft()
 
-            if node is not Node:
+            if node is not None:
                 table[col].append(node.val)
-                min_col == min(min_col, col)
-                max_col = max(max_col, col)
+                left_col = min(left_col, col)
+                right_col = max(right_col, col)
 
-                queue.append(node.left, col - 1)
-                queue.append(node.right, col + 1)
-        return [table[x] for x in range(min_col, max_col + 1)]
+                
+                
+                
+                queue.append((node.left, col - 1))
+                queue.append((node.right, col + 1))
+                
+        print(table)
+        print(right_col)
+        print(left_col)
+        return [table[x] for x in range(left_col, right_col + 1)]
