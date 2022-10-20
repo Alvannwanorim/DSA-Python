@@ -25,7 +25,7 @@ class Leaderboard:
     def reset(self, playerId: int) -> None:
         self.board[playerId] = 0
 
-class Leaderboard2:
+class Leaderboard:
 
     def __init__(self):
         self.board = defaultdict()

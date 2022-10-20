@@ -6,7 +6,6 @@ class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         memo = {}
         def dfs(s):
-            print(s)
             if s in memo:
                 return memo[s]
             
@@ -17,9 +16,10 @@ class Solution:
                         res += [x]
                     else:
                         for y in dfs(s[len(x):]):
+                            print(y)
                             res += [x + ' ' + y]
             memo[s] = res
-            print(memo)
+            print(res)
             return res
                         
         return dfs(s)
