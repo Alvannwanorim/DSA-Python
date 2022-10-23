@@ -2,25 +2,22 @@ from typing import List
 
 
 class Solution:
-    def redundantConnection(self, edges: List[List[int]]) -> List[int]:
+    def ConnectedNodes(self,n:int, edges: List[List[int]]) -> List[int]:
         par = [i for i in range(len(edges) + 1)]
         rank = [1] * (len(edges) + 1)
 
         def find(n):
             p = par[n]
-            print(p)
             while p != par[p]:
-                # print(par[par[p]])
                 par[p] = par[par[p]]
                 p = par[p] 
-                print("second", p)
             return p
 
         def union(n1, n2):
             p1, p2 = find(n1), find(n2)
 
             if p1 == p2:
-                return False
+                return 0
             
             if rank[p1] > rank[p2]:
                 par[p2] = p1
@@ -28,11 +25,12 @@ class Solution:
             else:
                 par[p1] = p2
                 rank[p2] += rank[p1]
-            return True
-        
+            return 1
+        res = n
         for n1, n2 in edges:
-            if not union(n1, n2):
-                return [n1, n2]
+            res -= union(n1, n2)
+        
+        return res
 
 sol = Solution()
-print(sol.redundantConnection([[1,2],[1,3],[2,3]]))
+print(sol.ConnectedNodes(5,[[1,2],[1,3],[2,3], [3,4]]))
