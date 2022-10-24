@@ -6,14 +6,14 @@ class Solution:
     def triangleNumber(self, nums: List[int]) -> int:
         nums, count = sorted(nums), 0
 
-        for i in range(2,len(nums)):
-            l, r = 0, i- 1
-            while l < r:
-                if nums[l] + nums[r] > nums[i]:
-                    count += (r - l)
-                    r -= 1
+        for k in range(2,len(nums)):
+            i, j = 0, k- 1
+            while i < j:
+                if nums[i] + nums[j] > nums[k]:
+                    count += (j - i)
+                    j -= 1
                 else:
-                    l += 1
+                    i += 1
         return count
 
     
