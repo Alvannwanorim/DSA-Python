@@ -1,5 +1,4 @@
-from pickle import TRUE
-from tkinter.tix import ROW
+
 from typing import List
 
 
@@ -15,7 +14,7 @@ class Solution:
                     if r > 0:
                         matrix[r][0] = 0
                     else:
-                        zeroRow = TRUE
+                        zeroRow = True
         
         for r in range(1,ROWS):
             for c in range(1, COLS):
@@ -34,4 +33,4 @@ class Solution:
         return matrix
 
 sol = Solution()
-print(sol.matrixZeros([[1,2,3],[4,5,6],[7,8,9]]))
+print(sol.matrixZeros([[1,1,1],[1,0,1],[1,1,1]]))
