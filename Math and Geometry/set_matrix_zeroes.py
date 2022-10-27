@@ -24,7 +24,7 @@ class Solution:
         if matrix[0][0] == 0:
             for r in range(ROWS):
                 matrix[r][0] = 0
-        
+        print(rowZero)
         if rowZero:
             for c in range(COLS):
                 matrix[0][c] = 0
