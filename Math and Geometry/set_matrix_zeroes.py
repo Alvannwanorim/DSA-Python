@@ -3,9 +3,9 @@ from typing import List
 
 
 class Solution: 
-    def matrixZeros(self, matrix: List[List[int]]) -> List[List[int]]:
-        COLS, ROWS = len(matrix[0]), len(matrix)
-        zeroRow = False
+    def matrixZeroes(self, matrix: List[List[int]]) -> List[List[int]]:
+        ROWS, COLS = len(matrix), len(matrix[0])
+        rowZero = False
 
         for r in range(ROWS):
             for c in range(COLS):
@@ -14,9 +14,9 @@ class Solution:
                     if r > 0:
                         matrix[r][0] = 0
                     else:
-                        zeroRow = True
+                        rowZero = True
         
-        for r in range(1,ROWS):
+        for r in range(1, ROWS):
             for c in range(1, COLS):
                 if matrix[0][c] == 0 or matrix[r][0] == 0:
                     matrix[r][c] == 0
@@ -25,7 +25,7 @@ class Solution:
             for r in range(ROWS):
                 matrix[r][0] = 0
         
-        if zeroRow:
+        if rowZero:
             for c in range(COLS):
                 matrix[0][c] = 0
 
@@ -33,4 +33,4 @@ class Solution:
         return matrix
 
 sol = Solution()
-print(sol.matrixZeros([[1,1,1],[1,0,1],[1,1,1]]))
+print(sol.matrixZeroes([[1,1,1],[1,0,1],[1,1,1]]))
