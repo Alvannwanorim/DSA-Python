@@ -21,6 +21,8 @@ class Solution:
 
       backtrack(0, [])
       return res
+sol = Solution()
+print(sol.subsets([1,2,2]))
     
     
     
