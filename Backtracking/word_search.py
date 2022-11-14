@@ -1,9 +1,9 @@
-from ast import List
+from typing import List
 
 
 class Solution:
     def wordSearch(self, board: List[List[str]], word: str) -> bool:
-        ROWS, COLS = len(word), len(board[0])
+        ROWS, COLS = len(board), len(board[0])
         path = set()
 
         def dfs(r, c , i):
@@ -21,10 +21,12 @@ class Solution:
                     dfs(r , c + 1, i + 1) or
                     dfs(r , c - 1, i + 1))
             path.remove((r, c))
+            return res
 
         for r in range(ROWS):
             for c in range(COLS):
                 if dfs(r,c, 0): return True
         
         return False
-        
+sol = Solution()
+print(sol.wordSearch([["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "ABCCED"))
