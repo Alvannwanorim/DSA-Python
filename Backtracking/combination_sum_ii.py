@@ -6,13 +6,13 @@ class Solution:
         candidates.sort()
 
         res = []
-        def backtrack(cur, i, target):
+        def backtrack(cur, pos, target):
             if target == 0:
                 res.append(cur.copy())
             if target <= 0:
                 return
             prev = -1
-            for i in range(len(candidates)):
+            for i in range(pos, len(candidates)):
                 if candidates[i] == prev:
                     continue
                 cur.append(candidates[i])
