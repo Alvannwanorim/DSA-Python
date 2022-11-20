@@ -31,4 +31,4 @@ class WordDictionary:
                     cur = cur.children[c]
             return cur.endOfWord
         
-        dfs(0, self.root)
+        return dfs(0, self.root)
