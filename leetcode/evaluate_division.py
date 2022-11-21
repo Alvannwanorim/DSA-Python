@@ -4,7 +4,7 @@ from typing import List
 
 class Solution:
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
-        graph = defaultdict
+        graph = defaultdict(defaultdict)
 
         def dfs(cur_node, target_node, acc_product, visited):
             visited.add(cur_node)
