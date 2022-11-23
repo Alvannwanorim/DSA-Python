@@ -27,6 +27,7 @@ class RandomizedCollection:
         
         if len(self.hasMap[val]) == 0:
             del self.hasMap[val]
+            
         self.numList.pop()
         print(self.hasMap)
         return True
