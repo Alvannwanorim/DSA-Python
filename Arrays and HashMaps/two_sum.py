@@ -10,5 +10,6 @@ class Solution:
             if diff in hashMap:
                 return [hashMap[diff], i]
             hashMap[num] = i
+        return 
 sol = Solution()
-print(sol.twoSum([2,3,5,6,7], 9))
+print(sol.twoSum([2,7,11,15], 9))
