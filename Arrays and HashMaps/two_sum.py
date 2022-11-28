@@ -8,4 +8,7 @@ class Solution:
         for i, num in enumerate(nums):
             diff = target - num
             if diff in hashMap:
-                return []
+                return [hashMap[diff], i]
+            hashMap[num] = i
+sol = Solution()
+print(sol.twoSum([2,3,5,6,7], 9))
