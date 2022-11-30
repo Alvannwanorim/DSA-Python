@@ -7,9 +7,6 @@ class Solution:
 
         res = 0
         cost = len(costs)
-        print(costs[:cost//2])
-        print(costs[cost//2:])
-        print(costs)
         for c in costs[cost//2:]:
             res += c[0]
         
