@@ -13,4 +13,5 @@ class Solution:
         return n <= 0
 
 sol = Solution()
+
 print(sol.canPlantFlowers([0,0,0],2))
