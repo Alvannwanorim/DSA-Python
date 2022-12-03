@@ -6,7 +6,7 @@ class ListNode:
         self.val = val 
         self.next = next
 
-class Slution:
+class Solution:
     def mergeKLists(self, lists: List[ListNode]) ->ListNode:
         if not lists or len(lists) ==0:
             return None 
