@@ -2,32 +2,37 @@ from typing import List
 
 
 class Solution:
-    def courseSchedule(self, numCourses: int, prerequisites: List[List[int]])-> List[int]:
-        prereq = {c:[] for c in range(numCourses)}
+    def courseSchedule(self, numCourses: int, prerequisites: List[List[int]]) ->List[int]:
+        preq = {i: [] for i in range(numCourses)}
 
         for crs, pre in prerequisites:
-            prereq[crs].append(pre)
-        
-        output = []
+            preq[crs].append(pre)
 
-        visited, cycle = set(), set()
+        visited = set()
+        
         def dfs(crs):
-            if crs in cycle:
-                return False
             if crs in visited:
-                return True
+                return False
             
-            cycle.add(crs)
+            if preq[crs] == []:
+                return True
 
-            for pre in prereq[crs]:
-                if dfs(pre) == False:
-                    return False
-            cycle.remove(crs)
             visited.add(crs)
-            output.append(crs)
+            for pre in preq[crs]:
+                if not dfs(pre):
+                    return False
+            visited.remove(crs)
             return True
-        
+        res = []
         for c in range(numCourses):
-            if dfs(c) == False:
-                return []
-        return output
+            if dfs(c):
+                res.append(c)
+        
+        return res
+
+
+
+sol = Solution()
+print(sol.courseSchedule(2, [[1,0]]))
+print(sol.courseSchedule(4,[[1,0],[2,0],[3,1],[3,2]]))
+            
