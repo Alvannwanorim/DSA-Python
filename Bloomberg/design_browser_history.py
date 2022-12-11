@@ -30,3 +30,14 @@ class BrowserHistory:
             self.root = self.root.next
             steps -= 1
         return self.root.val
+sol = BrowserHistory("leetcode.com")
+print(sol.visit("google.com"))
+print(sol.visit("facebook.com"))
+print(sol.visit("youtube.com"))
+print(sol.back(1))
+print(sol.back(1))
+print(sol.forward(1))
+print(sol.visit("linkedin.com"))
+print(sol.forward(2))
+print(sol.back(2))
+print(sol.back(7))
