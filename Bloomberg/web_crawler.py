@@ -8,6 +8,7 @@ class HtmlParser:
        """
        Return a list of urls
        """
+       pass
 
 class WebCrawler:
     def __init__(self) -> None:
@@ -29,7 +30,6 @@ class WebCrawler:
             for child in HtmlParser.get_urls(startUrl):
 
                 if child not in self.visited and self._get_domain_name(child) ==parent_domain:
-
                     self.visited.add(child)
                     self.queue.append(child)
                     self.result.append(child)
