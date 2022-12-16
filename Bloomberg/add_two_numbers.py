@@ -11,8 +11,8 @@ class Solution:
 
         carry = 0
         while l1 or l2 or carry !=0:
-            val1 = l1.val
-            val2 = l2.val
+            val1 = l1.val if l1 else 0
+            val2 = l2.val if l2 else 0
             val = val1 + val2 + carry
 
             carry  = val // 10
