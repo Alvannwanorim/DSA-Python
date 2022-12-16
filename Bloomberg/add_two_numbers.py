@@ -13,9 +13,9 @@ class Solution:
         while l1 or l2 or carry !=0:
             val1 = l1.val
             val2 = l2.val
-            val = val1 + val2
+            val = val1 + val2 + carry
 
-            carry  = val / 10
+            carry  = val // 10
             node = NodeList(val % 10)
             curr.next = node
             curr = node
