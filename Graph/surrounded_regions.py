@@ -9,6 +9,7 @@ class Solution:
             if( r < 0 or r == ROWS or c < 0 or c == COLS or board[r][c] != "O"):
                 return
             board[r][c] = "T"
+            # print(board[r][c] )
             capture(r + 1, c)
             capture(r - 1,c)
             capture(r , c + 1)
@@ -29,7 +30,7 @@ class Solution:
                 if board[r][c] =="T":
                     board[r][c] = "O"
         
-        return
+        return board
 
 sol = Solution()
-sol.surroundedRegion([["X","O","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]])
+print(sol.surroundedRegion([["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]))
