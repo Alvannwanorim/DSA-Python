@@ -30,7 +30,7 @@ class Solution:
                 addRoom(r ,c + 1)
                 addRoom(r ,c - 1)
             dist += 1
-        return rooms
+        return
 
 s = Solution()
 
