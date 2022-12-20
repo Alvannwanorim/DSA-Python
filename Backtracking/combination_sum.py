@@ -3,22 +3,21 @@ from typing import List
 
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        res =[]
+        res = []
 
-        def dfs(i, cur, total):
+        def dfs(i, curr, total):
             if total == target:
-                res.append(cur.copy())
+                res.append(curr.copy())
                 return 
-            if i >= len(candidates) or total > target:
-                return
-            cur.append(candidates[i])
-            dfs(i, cur, total + candidates[i])
+            if total > target:
+                return 
+            curr.append(candidates[i])
+            dfs(i + 1, curr, total + candidates[i])
 
-            cur.pop()
-            dfs(i + 1, cur, total)
-        
-        dfs(0,[],0)
+            curr.pop()
 
+            dfs(i + 1, curr, total + candidates[i])
+        dfs(0,[], candidates)
         return res
 sol = Solution()
 print(sol.combinationSum([1,2,3,4,5],7))
