@@ -6,6 +6,7 @@ class Solution:
         res = []
 
         def dfs(i, curr, total):
+            
             if total == target:
                 res.append(curr.copy())
                 return 
@@ -17,7 +18,8 @@ class Solution:
             curr.pop()
 
             dfs(i + 1, curr, total + candidates[i])
-        dfs(0,[], candidates)
+
+        dfs(0,[], 0)
         return res
 sol = Solution()
 print(sol.combinationSum([1,2,3,4,5],7))
