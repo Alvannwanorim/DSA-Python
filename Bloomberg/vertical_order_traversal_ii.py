@@ -18,7 +18,7 @@ class Solution:
         left_col = right_col = 0
         res = []
 
-        queue = deque([root, 0, 0])
+        queue = deque([(root, 0, 0)])
 
         while queue:
             node, row, col = queue.popleft()
