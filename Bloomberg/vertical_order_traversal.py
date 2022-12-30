@@ -1,5 +1,4 @@
 from collections import defaultdict, deque
-from lib2to3.pytree import Node
 from typing import List, Optional
 
 
