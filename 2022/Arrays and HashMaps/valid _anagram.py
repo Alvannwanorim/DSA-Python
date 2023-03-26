@@ -1,7 +1,7 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         hashMap = {}
-        if len(s) == len(t):
+        if len(s) != len(t):
             return False
         for c in s:
             if c in hashMap:
@@ -16,4 +16,4 @@ class Solution:
         return True
 
 sol = Solution()
-print(sol.isAnagram("anagram","nagaran"))
+print(sol.isAnagram("fast","fats"))
