@@ -12,5 +12,17 @@ class Solution:
         return False
 
 
-sol = Solution()
-print(sol.duplicates([1, 5, 2, 3, 4]))
+class Solution2:
+
+    def duplicates(self, num: List[int]) -> bool:
+        hashMap = {}
+        for n in num:
+            if n in hashMap:
+                return True
+            hashMap[n] = 1
+
+        return False
+
+
+sol = Solution2()
+print(sol.duplicates([1, 1, 2, 3, 4]))
