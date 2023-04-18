@@ -7,6 +7,7 @@ class TreeNode:
         self.left = left 
         self.right = right 
 
+
 class Solution:
     def max_depth_of_Binary_tree(self, root: Optional[TreeNode])->int:
         max_depth = 0 
