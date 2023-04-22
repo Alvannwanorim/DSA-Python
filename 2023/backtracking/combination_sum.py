@@ -17,4 +17,5 @@ class Solution:
 
         return res
 sol = Solution()
-print(sol.combination_sum([1,2,3, 4, 5, 6], 7))
+print(sol.combination_sum([2,3, 7, 6], 7))
+print(sol.combination_sum([2,3,5], 8))
