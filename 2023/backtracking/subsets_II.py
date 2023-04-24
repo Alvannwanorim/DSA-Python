@@ -1,6 +1,7 @@
 from typing import List
 class Solution:
     def subsets(self, nums:List[int])->List[List[int]]:
+        nums.sort()
         res = []
         def backtrack(i, subset):
             if i >= len(nums):
@@ -17,6 +18,6 @@ class Solution:
         return res
 
 sol = Solution()
-print(sol.subsets([1,2,2]))
+print(sol.subsets([2,1,2]))
             
                
