@@ -9,10 +9,10 @@ class Solution:
         for i, t in enumerate(temperatures):
             while stack and t > stack[-1][0]:
                 stackT, stackIn = stack.pop()
-                res.append((i - stackIn))
-            stack.append([t, i])
+                res[stackIn] = i - stackIn
+            stack.append((t, i))
         
         return res
 sol = Solution()
-print(sol.dailyTemperature([73,72.74,76,70]))
+print(sol.dailyTemperature([73,72, 74,76,70]))
              
