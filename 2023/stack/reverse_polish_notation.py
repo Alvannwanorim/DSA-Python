@@ -19,7 +19,7 @@ class Solution:
                 stack.append(b - a)
             else:
                 stack.append(int(c))
-        
+                
         return stack[0]
 sol = Solution()
 print(sol.evalRPN(["4","13","5","/","+"]))
