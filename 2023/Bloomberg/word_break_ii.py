@@ -1,15 +1,23 @@
 from typing import List
 
-
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str])->bool:
-        dp =[False] * (len(s) + 1 )
-        dp[0] = True
-        for i in range(len(s)):
-            if dp[i] == True:
-                for word in wordDict:
-                    if s[i:i + len(word)] == word and ( i + len(word)) <= len(s):
-                        dp[i + len(word)] = True
-        
-        return dp[len(s)]
-                       
+        memo = {}
+        def dfs(s):
+            if s in  memo: 
+                return memo[s]
+            
+            res = []
+            for x in wordDict:
+                if s.startswith(x):
+                    if s == x:
+                        res += [x]
+                    else:
+                        for y in dfs(s[len(x):]):
+                            res += [x + ' ' + y]
+            memo[s] = res
+            return res
+
+        return dfs(s)
+sol = Solution()
+print(sol.wordBreak('catsanddog', ["cat","cats","and","sand","dog"]))
